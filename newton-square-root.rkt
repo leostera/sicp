@@ -9,5 +9,5 @@
   (if (good-enough? guess x)
       guess
       (newton-sqrt (improve guess x)
-            x)))
+                   x)))
 
