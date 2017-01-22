@@ -8,7 +8,8 @@
 (define (average x y)
   (/ (+ x y) 2))
 
-(define (good-enough? ))
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
 
 (define (newton-sqrt guess x)
   (if (good-enough? guess x)
