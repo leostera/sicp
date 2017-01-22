@@ -14,11 +14,15 @@
 (define (good-enough? guess x)
   (< (abs (- (square guess) x)) 0.001))
 
+(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+
 (define (sqrt-iteration guess x)
-  (cond
-    ((good-enough? guess x) guess)
-    (else (sqrt-iteration (improve guess x)
-                          x))))
+  (new-if (good-enough? guess x)
+      guess
+      (sqrt-iteration (improve guess x)
+                   x)))
 
 (define (newton-sqrt x)
   (sqrt-iteration 1.0 x))
