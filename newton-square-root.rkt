@@ -18,6 +18,8 @@
 ; will be evaluated before being passed in to the `cond`
 ; special form, and in the iteration function below
 ; (`sqrt-iteration`) that begins an infinite loop
+; special forms such as `cond` or `if` do not evaluate all
+; of their parameters by applicative-order evaluation
 (define (new-if predicate then-clause else-clause)
   (cond (predicate then-clause)
         (else else-clause)))
