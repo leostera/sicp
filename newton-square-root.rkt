@@ -22,3 +22,7 @@
 
 (define (newton-sqrt x)
   (sqrt-iteration 1.0 x))
+
+(newton-sqrt 9)
+(newton-sqrt 49)
+(square (newton-sqrt 1000))
