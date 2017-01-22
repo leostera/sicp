@@ -2,6 +2,9 @@
 
 ; newton's square root method
 
+(define (square x)
+  (* x x))
+
 (define (improve guess x)
   (average guess (/ x guess)))
 
