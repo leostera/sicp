@@ -15,10 +15,10 @@
   (< (abs (- (square guess) x)) 0.001))
 
 (define (sqrt-iteration guess x)
-  (if (good-enough? guess x)
-      guess
-      (sqrt-iteration (improve guess x)
-                   x)))
+  (cond
+    ((good-enough? guess x) guess)
+    (else (sqrt-iteration (improve guess x)
+                          x))))
 
 (define (newton-sqrt x)
   (sqrt-iteration 1.0 x))
