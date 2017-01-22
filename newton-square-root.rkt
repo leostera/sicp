@@ -5,9 +5,9 @@
 (define (improve guess x)
   (average guess (/ x guess)))
 
-(define (sqrt guess x)
+(define (newton-sqrt guess x)
   (if (good-enough? guess x)
       guess
-      (sqrt (improve guess x)
+      (newton-sqrt (improve guess x)
             x)))
 
