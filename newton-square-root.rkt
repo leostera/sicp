@@ -5,6 +5,11 @@
 (define (improve guess x)
   (average guess (/ x guess)))
 
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (good-enough? ))
+
 (define (newton-sqrt guess x)
   (if (good-enough? guess x)
       guess
